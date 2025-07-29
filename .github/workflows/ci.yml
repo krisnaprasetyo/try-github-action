@@ -6,7 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run normal CI
-        run: echo "Running normal CI"
+        run: |
+          echo "Event name: ${{ github.event_name }}"
+          echo "Running normal CI"
 
   pull_request_ci:
     runs-on: ubuntu-latest
