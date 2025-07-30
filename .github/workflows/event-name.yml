@@ -1,20 +1,20 @@
-name: Run CI
+name: Print event name
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  normal_ci:
+  normal:
     runs-on: ubuntu-latest
     steps:
-      - name: Run normal CI
+      - name: Run normal
         run: |
           echo "Event name: ${{ github.event_name }}"
-          echo "Running normal CI"
+          echo "Running normal"
 
-  pull_request_ci:
+  pull_request:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' }}
     steps:
-      - name: Run PR CI
+      - name: Run PR
         run: |
           echo "Event name: ${{ github.event_name }}"
-          echo "Running PR only CI"
+          echo "Running PR"
